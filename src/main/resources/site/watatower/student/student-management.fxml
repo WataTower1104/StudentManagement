@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+student-management.fxml - 学生管理系统的主界面
+该界面是系统的主要操作界面，包含搜索功能、学生信息表格和操作按钮
+界面布局采用垂直布局（VBox），从上到下分为三个主要区域：
+1. 搜索栏（HBox）：包含搜索类型选择、搜索输入框和操作按钮
+2. 学生信息表格（TableView）：显示所有学生信息
+3. 操作按钮栏（HBox）：包含添加、删除、修改、清空等功能按钮
+-->
+
+<!-- 导入JavaFX所需的组件类 -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 
+VBox布局容器（根容器）：
+- spacing="10.0"：组件之间的间距为10像素
+- xmlns:fx="http://javafx.com/fxml"：FXML命名空间声明
+- fx:controller="site.watatower.student.Util.javafx.MainController"：指定控制器类
+-->
+<VBox spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="site.watatower.student.Util.javafx.MainController">
+    <!-- 内边距设置：上下左右各10像素 -->
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+
+    <!-- 
+    搜索栏（水平布局）：
+    - fx:id="searchBox"：组件ID，用于在控制器中引用
+    - spacing="10.0"：组件之间的间距为10像素
+    - alignment="CENTER_LEFT"：组件左对齐
+    -->
+    <HBox fx:id="searchBox" spacing="10.0" alignment="CENTER_LEFT">
+        <!-- 搜索类型下拉框：选择搜索条件（学号/姓名/专业） -->
+        <ComboBox fx:id="searchTypeComboBox" prefWidth="80.0"/>
+        
+        <!-- 搜索输入框：输入搜索关键词 -->
+        <TextField fx:id="searchTextField" prefWidth="200.0"/>
+        
+        <!-- 搜索按钮：触发搜索操作 -->
+        <Button fx:id="searchButton" text="搜索"/>
+        
+        <!-- 清除结果按钮：清空搜索结果，显示所有数据 -->
+        <Button fx:id="clearButton" text="清除结果"/>
+    </HBox>
+
+    <!-- 
+    学生信息表格：
+    - fx:id="studentTableView"：表格ID，用于在控制器中引用
+    - prefHeight="400.0"：首选高度400像素
+    -->
+    <TableView fx:id="studentTableView" prefHeight="400.0">
+        <!-- 表格列定义 -->
+        <columns>
+            <!-- 学号列：宽度80像素 -->
+            <TableColumn fx:id="idColumn" text="学号" prefWidth="80.0"/>
+            
+            <!-- 姓名列：宽度120像素 -->
+            <TableColumn fx:id="nameColumn" text="姓名" prefWidth="120.0"/>
+            
+            <!-- 年龄列：宽度80像素 -->
+            <TableColumn fx:id="ageColumn" text="年龄" prefWidth="80.0"/>
+            
+            <!-- 性别列：宽度80像素 -->
+            <TableColumn fx:id="genderColumn" text="性别" prefWidth="80.0"/>
+            
+            <!-- 专业列：宽度200像素 -->
+            <TableColumn fx:id="majorColumn" text="专业" prefWidth="200.0"/>
+        </columns>
+    </TableView>
+
+    <!-- 
+    操作按钮栏（水平布局）：
+    - spacing="10.0"：按钮之间的间距为10像素
+    - alignment="CENTER"：按钮居中对齐
+    -->
+    <HBox spacing="10.0" alignment="CENTER">
+        <!-- 添加按钮：打开添加学生对话框 -->
+        <Button fx:id="addButton" text="添加" prefWidth="80.0"/>
+        
+        <!-- 删除按钮：删除选中的学生 -->
+        <Button fx:id="deleteButton" text="删除" prefWidth="80.0"/>
+        
+        <!-- 修改按钮：打开修改学生对话框 -->
+        <Button fx:id="updateButton" text="修改" prefWidth="80.0"/>
+        
+        <!-- 全部清空按钮：清空所有学生信息（需要确认） -->
+        <Button fx:id="clearAllButton" text="全部清空" prefWidth="100.0"/>
+    </HBox>
+
+</VBox>

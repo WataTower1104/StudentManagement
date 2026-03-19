@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+loading.fxml - 学生管理系统的启动加载界面
+该界面在程序启动时显示，用于提升用户体验，避免程序启动时出现空白窗口
+界面组件说明：
+1. VBox - 垂直布局容器，用于垂直排列组件
+2. Label - 显示系统标题和加载状态文本
+3. ProgressIndicator - 显示加载进度的环形指示器
+-->
+
+<!-- 导入JavaFX所需的组件类 -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- 
+VBox布局容器：
+- alignment="CENTER"：所有子组件居中对齐
+- spacing="20.0"：组件之间的间距为20像素
+- xmlns:fx="http://javafx.com/fxml"：FXML命名空间声明
+-->
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml">
+    <!-- 内边距设置：上下左右各20像素 -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    
+    <!-- 系统标题标签：显示"学生管理系统"，字体大小24px，加粗 -->
+    <Label text="学生管理系统" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <!-- 
+    进度指示器：
+    - fx:id="progressIndicator"：组件ID，用于在Java代码中通过lookup方法查找
+    - prefWidth="100.0"：首选宽度100像素
+    - prefHeight="100.0"：首选高度100像素
+    -->
+    <ProgressIndicator fx:id="progressIndicator" prefWidth="100.0" prefHeight="100.0"/>
+    
+    <!-- 
+    加载状态标签：
+    - fx:id="loadingLabel"：组件ID，用于在Java代码中更新文本
+    - text="正在加载数据..."：初始显示文本
+    - style="-fx-font-size: 14px;"：字体大小14px
+    -->
+    <Label fx:id="loadingLabel" text="正在加载数据..." style="-fx-font-size: 14px;"/>
+    
+</VBox>
