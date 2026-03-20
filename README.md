@@ -58,15 +58,6 @@ StudentManagement/
 │   │                   ├── loading.fxml        # 加载界面
 │   │                   ├── student-management.fxml  # 主界面
 │   │                   └── students.txt        # 学生数据文件
-├──export/
-│   ├── app/
-│   ├── bin/
-│   │   ├── app.bat          # Windows启动脚本
-│   │   ├── app              # Linux/Mac启动脚本
-│   │   └── [JRE文件和依赖库]
-│   ├── conf/
-│   ├── legal/
-│   └── lib/
 ├── .mvn/                # Maven包装器
 ├── pom.xml              # Maven配置文件
 ├── mvnw                 # Maven包装器脚本（Linux/Mac）
